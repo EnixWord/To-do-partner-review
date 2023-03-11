@@ -6,7 +6,7 @@ const todoListEl = document.getElementById('todo-list');
 const formEl = document.getElementById('add-todo-form');
 const inputEl = document.getElementById('add-task');
 const deleteBtnEls = document.getElementsByClassName('delete-btn');
-const deleteCompletedBtnEl = document.getElementById('clear-completed-btn');
+const deleteBtn = document.getElementById('clear-completed-btn');
 
 const renderTasks = () => {
   todoListEl.innerHTML = '';
@@ -65,7 +65,7 @@ formEl.addEventListener('submit', (e) => {
 
 // clear all completed task
 
-deleteCompletedBtnEl.addEventListener('click', () => {
+deleteBtn.addEventListener('click', () => {
   todoData.tasksData = todoData.tasksData.filter((task) => !task.completed);
   todoData.updateLocalStorage();
   renderTasks();
